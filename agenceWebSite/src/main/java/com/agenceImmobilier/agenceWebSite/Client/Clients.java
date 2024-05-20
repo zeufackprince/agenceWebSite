@@ -25,7 +25,7 @@ public class Clients {
     private String nom;
     private String prenom;
     private String email;
-    private String motDePasse;
+    private String password;
     private String numeroTelephone;
     @Lob
     private byte[] imageProfil;

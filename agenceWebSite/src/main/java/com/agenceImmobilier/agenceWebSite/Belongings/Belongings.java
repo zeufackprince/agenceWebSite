@@ -3,7 +3,7 @@ package com.agenceImmobilier.agenceWebSite.Belongings;
 import java.util.List;
 
 import com.agenceImmobilier.agenceWebSite.Agent.Agents;
-import com.agenceImmobilier.agenceWebSite.Pubication.Publication;
+// import com.agenceImmobilier.agenceWebSite.Pubication.Publication;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,7 +11,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
+// import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -40,8 +40,8 @@ public class Belongings {
     @Lob
     private List<byte[]> images;
 
-    @OneToOne(mappedBy = "bienImmobilier")
-    private Publication publications;
+    // @OneToOne(mappedBy = "bienImmobilier")
+    // private Publication publications;
 
     @ManyToOne
     private Agents agents;

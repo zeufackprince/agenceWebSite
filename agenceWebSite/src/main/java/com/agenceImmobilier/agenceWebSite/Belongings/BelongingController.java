@@ -2,7 +2,6 @@ package com.agenceImmobilier.agenceWebSite.Belongings;
 
 import javax.management.relation.RelationNotFoundException;
 
-import org.aspectj.weaver.loadtime.Agent;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,10 +27,10 @@ public class BelongingController {
     }
 
     @PostMapping
-    public Belongings createBienImmobilier(@RequestBody Belongings bienImmobilier, Long agentId) throws RelationNotFoundException {
-        Agents agent = agentRepository.findById(agentId).orElse(null);
+    public Belongings createBienImmobilier(@RequestBody Belongings bienImmobilier, String email) throws RelationNotFoundException {
+        Agents agent = agentRepository.findByEmail(email);
         if (agent == null) {
-            throw new EntityNotFoundException("Agent with id " + agentId + " not found");
+            throw new EntityNotFoundException("Agent with id " + email + " not found");
         }
         return belongingService.createBienImmobilier(bienImmobilier, agent);
     }

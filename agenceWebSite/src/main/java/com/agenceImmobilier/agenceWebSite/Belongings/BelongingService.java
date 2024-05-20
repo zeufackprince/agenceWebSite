@@ -1,5 +1,6 @@
 package com.agenceImmobilier.agenceWebSite.Belongings;
 
+
 import org.springframework.stereotype.Service;
 
 import com.agenceImmobilier.agenceWebSite.Agent.AgentRepository;
