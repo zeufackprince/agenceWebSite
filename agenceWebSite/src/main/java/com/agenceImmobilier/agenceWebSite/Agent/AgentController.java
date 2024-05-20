@@ -3,9 +3,12 @@ package com.agenceImmobilier.agenceWebSite.Agent;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -43,5 +46,14 @@ public class AgentController {
         return this.agentService.getByName(nom);
     }
 
-    
+    @PutMapping(path = "/{id}")
+    public void updateAgents(
+        @PathVariable("id") Long Id,
+        @RequestParam(required = false) String nom,
+        @RequestParam(required = false) String password,
+        @RequestParam(required = false) String numeroTelephone,
+        @RequestParam(required = false) byte[] imageProfil)
+    {
+        this.agentService.updateAgents(Id, nom, password, numeroTelephone,imageProfil);
+    }
 }

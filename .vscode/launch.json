@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "AgenceWebSiteApplication",
+            "request": "launch",
+            "mainClass": "com.agenceImmobilier.agenceWebSite.AgenceWebSiteApplication",
+            "projectName": "agenceWebSite"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
